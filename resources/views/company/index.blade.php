@@ -7,24 +7,20 @@
             <div class="company-profile">
                 @if(empty($company->cover_photo))
 
-
                     <img src="{{asset('cover/com.jpg')}}" style="width:100%;">
 
                 @else
                     <img src="{{asset('uploads/coverphoto')}}/{{$company->cover_photo}}" style="width: 100%;">
 
-
                 @endif
-
 
                 <div class="company-desc">
                     @if(empty($company->logo))
 
-                        <img width="100" src="{{asset('avatar/man.jpg')}}">
+                        <img width="100" src="{{asset('avatar/fedex-logo-arrow.jpg')}}">
 
                     @else
                         <img width="100" src="{{asset('uploads/logo')}}/{{$company->logo}}">
-
 
                     @endif
 
@@ -48,7 +44,7 @@
                 <tbody>
                 @foreach($company->jobs as $job)
                     <tr>
-                        <td><img src="{{asset('avatar/man.jpg')}}" width="80"></td>
+                        <td><img src="{{asset('avatar/fedex-logo-arrow.jpg')}}" width="80"></td>
                         <td>Position:{{$job->position}}
                             <br>
                             <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{$job->type}}
@@ -58,7 +54,7 @@
                                aria-hidden="true"></i>&nbsp;Date:{{$job->created_at->diffForHumans()}}</td>
                         <td>
                             <a href="{{route('jobs.show',[$job->id,$job->slug])}}">
-                                <button class="btn btn-success btn-sm"> Apply
+                                <button class="btn btn-success btn-sm"> Apply for this Job
                                 </button>
                             </a>
 
@@ -67,7 +63,6 @@
                 @endforeach
                 </tbody>
             </table>
-
 
         </div>
     </div>
