@@ -15,7 +15,7 @@
             <form action="{{route('avatar')}}" method="POST" enctype="multipart/form-data">@csrf
 
             <div class="card">
-                <div class="card-header">Update profile picture</div>
+                <div class="card-header">Update the Profile Picture</div>
                 <div class="card-body">
                     <input type="file" class="form-control" name="avatar">
                     <br>
@@ -39,7 +39,6 @@
 
                 <form action="{{route('profile.create')}}" method="POST">@csrf
 
-
                 <div class="card-body">
                     <div class="form-group">
                         <label for="">Address</label>
@@ -62,14 +61,12 @@
                     </div>
 
                 </div>
+                </form>
             </div>
-
-            
 
         </div>
 
-
-</form>
+        </form>
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">About you</div>

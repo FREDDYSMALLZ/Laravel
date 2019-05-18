@@ -9,7 +9,7 @@
         </div>
 <br>
 <br>
-        <h1>Recent Jobs</h1>
+        <h1>These are the Recent Jobs</h1>
 
         <table class="table">
             
@@ -25,7 +25,7 @@
                     <td><i class="fa fa-globe"aria-hidden="true"></i>&nbsp;{{$job->created_at->diffForHumans()}}</td>
                     <td>
                         <a href="{{route('jobs.show',[$job->id,$job->slug])}}">
-                            <button class="btn btn-success btn-sm">     Apply
+                            <button class="btn btn-success btn-sm">     Apply for this job Position
                             </button>
                         </a>
                     </td>

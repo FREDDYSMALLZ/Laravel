@@ -12,6 +12,8 @@
 // */
 //jobs
 
+use App\Job;
+
 Route::get('/','JobController@index');
 Route::get('/jobs/create','JobController@create')->name('job.create');
 Route::post('/jobs/create','JobController@store')->name('job.store');
@@ -28,12 +30,12 @@ Route::get('/jobs/alljobs','JobController@allJobs')->name('alljobs');
 Auth::routes(['verify' => true]);
 
 
-
-	
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Show jobs
 Route::get('/jobs/{id}/{job}','JobController@show')->name('jobs.show');
+
+
 //company
 Route::get('/company/{id}/{company}','CompanyController@index')->name('company.index');
 Route::get('company/create','CompanyController@create')->name('company.view');
@@ -76,7 +78,7 @@ Route::get('messages/{id}','MessageController@create')->name('message');
  Route::get('jobs/search',function(){
 
         $keyword = request('keyword');
-        $users = \App\Job::where('title','like','%'.$keyword.'%')
+        $users = Job::where('title','like','%'.$keyword.'%')
                 ->orWhere('position','like','%'.$keyword.'%')
                 ->limit(5)->get();
         return response()->json($users);
