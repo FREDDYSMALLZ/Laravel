@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Job;
 use Illuminate\Http\Request;
 use App\Profile;
 class UserController extends Controller
@@ -14,7 +15,7 @@ class UserController extends Controller
     public function users(Request $request)
     {
         $query = $request->get('query');
-        $users = \App\Job::where('title','like','%'.$query.'%')
+        $users = Job::where('title','like','%'.$query.'%')
                 ->orWhere('position','like','%'.$query.'%')
                 ->get();
         return response()->json($users);
@@ -32,7 +33,7 @@ class UserController extends Controller
    			'experience'=>request('experience'),
    			'bio'=>request('bio')
    		]);
-   		return redirect()->back()->with('message','Profile Sucessfully Updated!');
+   		return redirect()->back()->with('message','Profile Successfully Updated!');
 
    }
 
@@ -42,7 +43,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'cover_letter'=>$cover
             ]);
-            return redirect()->back()->with('message','Cover letter Sucessfully Updated!');
+            return redirect()->back()->with('message','Cover letter Successfully Updated!');
 
 
 
@@ -53,7 +54,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'resume'=>$resume
             ]);
-        return redirect()->back()->with('message','Resume Sucessfully Updated!');
+        return redirect()->back()->with('message','Resume Successfully Updated!');
 
 
 
@@ -69,7 +70,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'avatar'=>$filename
             ]);
-        return redirect()->back()->with('message','Profile picture Sucessfully Updated!');
+        return redirect()->back()->with('message','Profile picture Successfully Updated!');
         }
 
    }

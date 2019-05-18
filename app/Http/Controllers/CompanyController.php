@@ -49,7 +49,7 @@ class CompanyController extends Controller
                 'cover_photo'=>$filename
             ]);
         }
-        return redirect()->back()->with('message','Company coverphoto Sucessfully Updated!');
+        return redirect()->back()->with('message','Company Cover photo Successfully Updated!');
 
     }
     public function companyLogo(Request $request){
