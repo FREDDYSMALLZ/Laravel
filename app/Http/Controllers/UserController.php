@@ -31,7 +31,9 @@ class UserController extends Controller
       Profile::where('user_id',$user_id)->update([
         'address'=>request('address'),
    			'experience'=>request('experience'),
-   			'bio'=>request('bio')
+          'bio' => request('bio'),
+          'phone_number' => request('phone_number')
+
    		]);
         return redirect()->back()->with('message', 'Your Profile has been Successfully Updated!');
 

@@ -33,6 +33,7 @@
       <td>Gender{{$user->profile->gender}}</td>
       <td>Experience:{{$user->profile->experience}}</td>
       <td>Bio:{{$user->profile->bio}}</td>
+                <td>Phone Number:{{$user->profile->phone_number}}</td>
 
       <td><a href="{{Storage::url($user->profile->resume)}}">Resume</a></td>
 

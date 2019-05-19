@@ -46,6 +46,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="">Phone Number</label>
+                        <input type="text" class="form-control" name="phone_number"
+                               value="{{Auth::user()->profile->phone_number}}">
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="">Experience</label>
                         <textarea name="experience" class="form-control">{{Auth::user()->profile->experience}}</textarea>
                     </div>
@@ -74,6 +81,7 @@
                 <p>Name:{{Auth::user()->name}}</p>
                 <p>Email:{{Auth::user()->email}}</p>
                 <p>Address:{{Auth::user()->profile->address}}</p>
+                    <p>Phone Number:{{Auth::user()->profile->phone_number}}</p>
                 <p>Gender:{{Auth::user()->profile->gender}}</p>
                 <p>Experience:{{Auth::user()->profile->experience}}</p>
                 <p>Bio:{{Auth::user()->profile->bio}}</p>
