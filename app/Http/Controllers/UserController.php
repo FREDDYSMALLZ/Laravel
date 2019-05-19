@@ -33,7 +33,7 @@ class UserController extends Controller
    			'experience'=>request('experience'),
    			'bio'=>request('bio')
    		]);
-   		return redirect()->back()->with('message','Profile Successfully Updated!');
+        return redirect()->back()->with('message', 'Your Profile has been Successfully Updated!');
 
    }
 
@@ -43,7 +43,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'cover_letter'=>$cover
             ]);
-            return redirect()->back()->with('message','Cover letter Successfully Updated!');
+        return redirect()->back()->with('message', 'Your Cover Letter has Successfully been Uploaded!');
 
 
 
@@ -54,7 +54,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'resume'=>$resume
             ]);
-        return redirect()->back()->with('message','Resume Successfully Updated!');
+        return redirect()->back()->with('message', 'Your Resume has been Successfully Uploaded!');
 
 
 
@@ -70,7 +70,7 @@ class UserController extends Controller
             Profile::where('user_id',$user_id)->update([
               'avatar'=>$filename
             ]);
-        return redirect()->back()->with('message','Profile picture Successfully Updated!');
+            return redirect()->back()->with('message', 'Your Profile Picture has been Successfully Uploaded!');
         }
 
    }

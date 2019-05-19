@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3">
             @if(empty(Auth::user()->profile->avatar))
-            <img src="{{asset('avatar/man.jpg')}}" width="100" style="width: 100%;">
+                <img src="{{asset('avatar/UPS-Logo.jpg')}}" width="100" style="width: 100%;">
             @else
             <img src="{{asset('uploads/avatar')}}/{{Auth::user()->profile->avatar}}" width="100" style="width: 100%;">
 
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-success" type="submit">Update</button>
+                        <button class="btn btn-success" type="submit">Update your Bio Information</button>
                     </div>
 
                 </div>
@@ -82,27 +82,25 @@
                 @if(!empty(Auth::user()->profile->cover_letter))
                     <p><a href="{{Storage::url(Auth::user()->profile->cover_letter)}}">Cover letter</a></p>
                 @else
-                    <p>Please upload cover letter</p>
+                        <p>Please Upload your Cover Letter</p>
                 @endif
 
 
                 @if(!empty(Auth::user()->profile->resume))
                     <p><a href="{{Storage::url(Auth::user()->profile->resume)}}">Resume</a></p>
                 @else
-                    <p>Please upload resume</p>
+                        <p>Please Upload Your Resume</p>
                 @endif
-
-
 
                 </div>
             </div>
         <br>
         <form action="{{route('cover.letter')}}" method="POST" enctype="multipart/form-data">@csrf
             <div class="card">
-                <div class="card-header">Update coverletter</div>
+                <div class="card-header">Update your Cover Letter</div>
                 <div class="card-body">
                     <input type="file" class="form-control" name="cover_letter"><br>
-                    <button class="btn btn-success float-right" type="submit">Update</button>
+                    <button class="btn btn-success float-right" type="submit">Update your Cover Letter</button>
                 </div>
             </div>
         </form>
@@ -111,11 +109,11 @@
             <form action="{{route('resume')}}" method="POST" enctype="multipart/form-data">@csrf
 
             <div class="card">
-                <div class="card-header">Update resume</div>
+                <div class="card-header">Update your Resume</div>
                 <div class="card-body">
                     <input type="file" class="form-control" name="resume">
                     <br>
-                    <button class="btn btn-success float-right" type="submit">Update</button>
+                    <button class="btn btn-success float-right" type="submit">Update your Resume</button>
                 </div>
             </div>
         </form>
